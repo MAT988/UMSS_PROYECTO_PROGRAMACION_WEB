@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MAT988/PROYECTO_ROGRAMACION_WEB.git"
+    "url": "git+https://github.com/MAT988/UMSS_PROYECTO_PROGRAMACION_WEB.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MAT988/PROYECTO_ROGRAMACION_WEB/issues"
+    "url": "https://github.com/MAT988/UMSS_PROYECTO_PROGRAMACION_WEB/issues"
   },
-  "homepage": "https://github.com/MAT988/PROYECTO_ROGRAMACION_WEB#readme",
+  "homepage": "https://github.com/MAT988/UMSS_PROYECTO_PROGRAMACION_WEB#readme",
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.1.0"
