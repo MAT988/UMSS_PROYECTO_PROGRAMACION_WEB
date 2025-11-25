@@ -1,5 +1,6 @@
 import Server from './config/server.config.js';
 import { PORT } from './config/env.config.js';
+import { connectDatabase } from './config/database.config.js';
 
 async function startServer() {
   try {
@@ -12,3 +13,4 @@ async function startServer() {
 }
 
 startServer();
+connectDatabase();
