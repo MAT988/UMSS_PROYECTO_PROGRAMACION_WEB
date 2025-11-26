@@ -8,13 +8,14 @@ const router = Router();
 router.use('/api', HealthRoutes);
 router.use('/api/categorias', CategoriaRoutes);
 
+router.use('/api/rangos-edad', RangoEdadRoutes);
+router.use('/api/niveles-dificultad', NivelDificultadRoutes);
+
 router.use((req, res) => {
   console.log('Not found:', req.method, req.originalUrl);
   res.status(404).send({
     message: 'route not found',
   });
 });
-router.use('/api/rangos-edad', RangoEdadRoutes);
-router.use('/api/niveles-dificultad', NivelDificultadRoutes);
 
 export default router;
