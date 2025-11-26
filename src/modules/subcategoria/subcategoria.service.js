@@ -4,7 +4,7 @@ export async function findAll() {
   return await Subcategoria.find().sort({ nom_subcat: 1 });
 }
 
-export async function findById(id) {
+export async function findById(id){
   const subcategoria = await Subcategoria.findById(id);
   if (!subcategoria) {
     throw new Error("Subcategoría no encontrada");
@@ -12,7 +12,7 @@ export async function findById(id) {
   return subcategoria;
 }
 
-export async function createSubcategoria(data) {
+export async function createSubcategoria(data){
   const { nom_subcat, desc_subcat, sigla, id_cat } = data;
   if (!nom_subcat || !sigla || !id_cat) {
     throw new Error("Faltan campos requeridos (nombre, sigla o id_cat)");
@@ -20,7 +20,7 @@ export async function createSubcategoria(data) {
   return await Subcategoria.create({ nom_subcat, desc_subcat, sigla, id_cat });
 }
 
-export async function updateSubcategoria(id, data) {
+export async function updateSubcategoria(id, data){
   const subcategoria = await Subcategoria.findByIdAndUpdate(
     id,
     data,
@@ -32,7 +32,7 @@ export async function updateSubcategoria(id, data) {
   return subcategoria;
 }
 
-export async function deleteSubcategoria(id) {
+export async function deleteSubcategoria(id){
   const subcategoria = await Subcategoria.findByIdAndDelete(id);
   if (!subcategoria) {
     throw new Error("Subcategoría no encontrada");
