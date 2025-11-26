@@ -3,10 +3,12 @@ import HealthRoutes from '../modules/health/health.routes.js';
 import RangoEdadRoutes from '../modules/rangoEdad/rango_edad.routes.js';
 import NivelDificultadRoutes from '../modules/nivel_dificultad/nivel_dificultad.routes.js';
 import CategoriaRoutes from '../modules/categoria/categoria.routes.js';
+import SubcategoriaRoutes from '../modules/subcategoria/subcategoria.routes.js';
 
 const router = Router();
 router.use('/api', HealthRoutes);
 router.use('/api/categorias', CategoriaRoutes);
+router.use('/api/subcategorias', SubcategoriaRoutes);
 
 router.use('/api/rangos-edad', RangoEdadRoutes);
 router.use('/api/niveles-dificultad', NivelDificultadRoutes);
