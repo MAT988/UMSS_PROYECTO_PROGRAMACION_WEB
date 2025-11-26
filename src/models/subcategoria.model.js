@@ -19,7 +19,7 @@ const subcategoriaSchema = new Schema({
     uppercase: true
   },
   id_cat: {
-    type: mongoose.Schema.ObjectID,
+    type: mongoose.Schema.ObjectId,
     ref: "Categoria",
     required: true
   }

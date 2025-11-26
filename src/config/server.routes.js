@@ -1,9 +1,11 @@
 import { Router } from 'express';
 import HealthRoutes from '../modules/health/health.routes.js';
+import CategoriaRoutes from '../modules/categoria/categoria.routes.js';
 
 const router = Router();
 
 router.use('/api', HealthRoutes);
+router.use('/api/categorias', CategoriaRoutes);
 
 router.use((req, res) => {
   console.log('Not found:', req.method, req.originalUrl);
@@ -11,5 +13,6 @@ router.use((req, res) => {
     message: 'route not found',
   });
 });
+
 
 export default router;
