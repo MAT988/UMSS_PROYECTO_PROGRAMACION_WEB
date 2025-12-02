@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const {Schema}=mongoose;
+const { Schema } = mongoose;
 
 const categoriaSchema=new Schema({
   nom_cat: {
