@@ -5,20 +5,23 @@ import NivelDificultadRoutes from '../modules/nivel_dificultad/nivel_dificultad.
 import CategoriaRoutes from '../modules/categoria/categoria.routes.js';
 import SubcategoriaRoutes from '../modules/subcategoria/subcategoria.routes.js';
 import RolRoutes from '../modules/rol/rol.routes.js';
+import AuthRoutes from '../modules/auth/auth.routes.js';
+import { verifyToken } from '../middlewares/auth.middleware.js';
 
-const router = Router();
-router.use('/api', HealthRoutes);
+const router=Router();
 
-router.use('/api/categorias', CategoriaRoutes);
-router.use('/api/subcategorias', SubcategoriaRoutes);
-router.use('/api/rangos-edad', RangoEdadRoutes);
-router.use('/api/niveles-dificultad', NivelDificultadRoutes);
-router.use('/api/rol', RolRoutes);
+router.use('/api/auth',AuthRoutes);
+router.use('/api',HealthRoutes);
+router.use('/api/categorias',verifyToken,CategoriaRoutes);
+router.use('/api/subcategorias',verifyToken,SubcategoriaRoutes);
+router.use('/api/rangos-edad',verifyToken,RangoEdadRoutes);
+router.use('/api/niveles-dificultad',verifyToken,NivelDificultadRoutes);
+router.use('/api/rol',RolRoutes);
 
-router.use((req, res) => {
-  console.log('Not found:', req.method, req.originalUrl);
+router.use((req, res)=>{
+  console.log('Not found:',req.method,req.originalUrl);
   res.status(404).send({
-    message: 'route not found',
+    message:'route not found',
   });
 });
 
