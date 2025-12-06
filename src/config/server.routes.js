@@ -18,6 +18,10 @@ router.use('/api/rangos-edad',verifyToken,RangoEdadRoutes);
 router.use('/api/niveles-dificultad',verifyToken,NivelDificultadRoutes);
 router.use('/api/rol',RolRoutes);
 
+router.use('/',(req, res)=>{
+  res.json({ message: 'Ejecutando servidor HTTP :v'});
+});
+
 router.use((req, res)=>{
   console.log('Not found:',req.method,req.originalUrl);
   res.status(404).send({
