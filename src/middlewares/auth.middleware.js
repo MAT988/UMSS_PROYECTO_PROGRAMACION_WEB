@@ -26,3 +26,14 @@ export function verifyToken(req, res, next) {
     next();
   });
 };
+
+export function restrictTo(...allowedRoles) {
+  return (req, res, next) => {
+    if (!allowedRoles.includes(req.userRole)) {
+      return res.status(403).json({ 
+        message: 'No tienes permisos para realizar esta acción. (Forbidden)' 
+      });
+    }
+    next();
+  };
+}
