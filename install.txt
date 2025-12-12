@@ -1,32 +1,33 @@
 ===========================
 PASOS DE INSTALACIÓN
 ===========================
-1)Clonar el repositorio
-2)Instalar dependencias: npm install
+1) Clonar el repositorio
+2) Navegue dentro de la carpetaa UMSS_PROYECTO_PROGRAMACION_WEB (mismo nivel que la de src) ya que desde aquí ejecutaremos todo
+3) Instalar dependencias: npm install
 
 
 ===========================
 CONFIGURACIÓN DEL ENTORNO
 ===========================
-1)Crear un archivo llamado .env en la raiz del proyecto, al mismo nivel que la carpeta "src"
+1) Crear un archivo llamado .env en la raiz del proyecto, al mismo nivel que la carpeta "src"
 
-2)Agregar las siguientes variables al archivo .env:
-  (En caso de querer conectar con su propia base de datos)
-  DATABASE_URI=mongodb+srv://<usuario>:<password>@<cluster>/<database>?retryWrites=true&w=majority&appName=<nombre> 
-  (En caso de querer conectar con la base de datos creada por defecto)
-  DATABASE_URI=mongodb+srv://zerotimesnegativeone:negativezero@cluster0.wfgbxwp.mongodb.net/sp_project?retryWrites=true&w=majority&appName=Cluster0 
-  PORT=5000
-  JWT_SECRET="clave_secreta"
+2) Agregar las siguientes variables al archivo .env:
+    (En caso de querer conectar con su propia base de datos)
+    DATABASE_URI=mongodb+srv://<usuario>:<password>@<cluster>/<database>?retryWrites=true&w=majority&appName=<nombre> 
+    (En caso de querer conectar con la base de datos creada por defecto)
+    DATABASE_URI=mongodb+srv://zerotimesnegativeone:negativezero@cluster0.wfgbxwp.mongodb.net/sp_project?retryWrites=true&w=majority&appName=Cluster0 
+    PORT=5000
+    JWT_SECRET="clave_secreta"
 
-  La variable DATABASE_URI se obtiene desde MongoDB Atlas:
-  Database → Connect → Connect your application
+    La variable DATABASE_URI se obtiene desde MongoDB Atlas:
+    Database → Connect → Connect your application
 
 
 ===========================
 CERTIFICADOS HTTPS (LOCAL)
 ===========================
-1)Asegurese de tener instalado el openssl, una vez que este instalado pasar al siguiente paso
-2)Ejecutar el comando para generar los certificados del sistema: npm run generate-cert 
+1) Asegurese de tener instalado el openssl, una vez que este instalado pasar al siguiente paso
+2) Ejecutar el comando para generar los certificados del sistema: npm run generate-cert 
 
 
 ===========================
