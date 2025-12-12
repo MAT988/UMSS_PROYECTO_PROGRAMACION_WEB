@@ -1,12 +1,12 @@
 import 'dotenv/config';
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
-import Categoria from '../src/models/Categoria.js';
-import Subcategoria from '../src/models/Subcategoria.js';
-import NivelDificultad from '../src/models/NivelDificultad.js';
-import RangoEdad from '../src/models/RangoEdad.js';
-import Rol from '../src/models/Rol.js';
-import Usuario from '../src/models/Usuario.js';
+import Categoria from '../src/models/categoria.model.js';
+import Subcategoria from '../src/models/subcategoria.model.js';
+import NivelDificultad from '../src/models/nivel_dificultad.model.js';
+import RangoEdad from '../src/models/rango_edad.model.js';
+import Rol from '../src/models/rol.model.js';
+import Usuario from '../src/models/usuario.model.js';
 
 const databaseUri = process.env.DATABASE_URI;
 
