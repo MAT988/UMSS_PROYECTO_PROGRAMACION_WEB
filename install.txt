@@ -1,0 +1,48 @@
+===========================
+PASOS DE INSTALACIÓN
+===========================
+1)Clonar el repositorio
+2)Instalar dependencias: npm install
+
+
+===========================
+CONFIGURACIÓN DEL ENTORNO
+===========================
+1)Crear un archivo llamado .env en la raiz del proyecto, al mismo nivel que la carpeta "src"
+
+2)Agregar las siguientes variables al archivo .env:
+  (En caso de querer conectar con su propia base de datos)
+  DATABASE_URI=mongodb+srv://<usuario>:<password>@<cluster>/<database>?retryWrites=true&w=majority&appName=<nombre> 
+  (En caso de querer conectar con la base de datos creada por defecto)
+  DATABASE_URI=mongodb+srv://zerotimesnegativeone:negativezero@cluster0.wfgbxwp.mongodb.net/sp_project?retryWrites=true&w=majority&appName=Cluster0 
+  PORT=5000
+  JWT_SECRET="clave_secreta"
+
+  La variable DATABASE_URI se obtiene desde MongoDB Atlas:
+  Database → Connect → Connect your application
+
+
+===========================
+CERTIFICADOS HTTPS (LOCAL)
+===========================
+1)Crear la carpeta "cert" en la raiz del proyecto (si no existe)
+
+2)Generar certificados locales con OpenSSL (debe quedar exactamente con estos nombres):
+  -cert/localhost.key
+  -cert/localhost.crt
+Comando(Windows PowerShell):
+openssl req -x509 -newkey rsa:2048 -nodes -keyout cert/localhost.key -out cert/localhost.crt -days 365 -subj "/CN=localhost"
+Si no tienes OpenSSL instalado, instalarlo y volver a ejecutar el comando.
+
+
+===========================
+POBLAR LA BASE DE DATOS
+===========================
+Para crear datos de prueba en la base de datos ejecutar: node scripts/data_base.js
+Este script elimina los datos existentes y crea los datos necesarios para el funcionamiento del sistema.
+
+
+===========================
+EJECUCIÓN DEL PROYECTO
+===========================
+Para iniciar el servidor ejecutar: npm run dev
