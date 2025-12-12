@@ -25,16 +25,19 @@ CONFIGURACIÓN DEL ENTORNO
 ===========================
 CERTIFICADOS HTTPS (LOCAL)
 ===========================
-1)Crear la carpeta "cert" en la raiz del proyecto (si no existe)
-
-2)Generar certificados locales con OpenSSL (debe quedar exactamente con estos nombres):
-  -cert/localhost.key
-  -cert/localhost.crt
-Comando(Windows PowerShell):
-openssl req -x509 -newkey rsa:2048 -nodes -keyout cert/localhost.key -out cert/localhost.crt -days 365 -subj "/CN=localhost"
-Si no tienes OpenSSL instalado, instalarlo y volver a ejecutar el comando.
+1)Asegurese de tener instalado el openssl, una vez que este instalado pasar al siguiente paso
+2)Ejecutar el comando para generar los certificados del sistema: npm run generate-cert 
 
 
+===========================
+EJECUCIÓN DEL PROYECTO
+===========================
+Una vez realizados los pasos anteriores ,usted ya puede levantar el servidor y ejecutarlo mediante el comando: npm run dev 
+Esto da como resultado en consola la confirmacion de la conexion exitosa con la base de datos y el puerto donde se esta ejecutando.
+
+En caso de querer poblar la base de datos, seguir los pasos de la etapa de POBLAR LA BASE DE DATOS y volver a levanter el servidor.
+
+ 
 ===========================
 POBLAR LA BASE DE DATOS
 ===========================
@@ -43,6 +46,5 @@ Este script elimina los datos existentes y crea los datos necesarios para el fun
 
 
 ===========================
-EJECUCIÓN DEL PROYECTO
+PRUEBA DE ENDPOINTS EN POSTMAN
 ===========================
-Para iniciar el servidor ejecutar: npm run dev
